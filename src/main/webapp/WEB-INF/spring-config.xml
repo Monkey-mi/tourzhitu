@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+       http://www.springframework.org/schema/aop   
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		
+<!-- 	<context:property-placeholder location="classpath:hts.properties" /> 
+	
+	<context:component-scan base-package="com.hts.web,com.imzhitu.filter" /> -->
+
+    <context:annotation-config />
+    
+<!--     <bean id="masterDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" >
+		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="${database.master.jdbcUrl}"></property>
+		<property name="user" value="${database.master.user}" />
+		<property name="password" value="${database.master.password}" />
+		<property name="maxPoolSize" value="${database.master.maxPoolSize}"></property>  
+	    <property name="minPoolSize" value="${database.master.minPoolSize}"></property>
+	    <property name="maxIdleTime" value="${database.master.maxIdleTime}"></property>
+	    <property name="idleConnectionTestPeriod" value="${database.master.idleConnectionTestPeriod}"></property>
+	</bean>
+	
+	<bean id="slaveDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" >
+		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="${database.slave.jdbcUrl}"></property>
+		<property name="user" value="${database.slave.user}" />
+		<property name="password" value="${database.slave.password}" />
+		<property name="maxPoolSize" value="${database.slave.maxPoolSize}"></property>  
+	    <property name="minPoolSize" value="${database.slave.minPoolSize}"></property>
+	    <property name="maxIdleTime" value="${database.slave.maxIdleTime}"></property>
+	    <property name="idleConnectionTestPeriod" value="${database.slave.idleConnectionTestPeriod}"></property>
+	</bean> -->
+
+	<!-- 
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="masterDataSource"></property>
+	</bean>
+	 -->
+
+<!-- 	<bean id="masterJdbcTemplate" class="com.hts.web.base.database.ZTJdbcTemplate">
+		<constructor-arg ref="masterDataSource" />
+	</bean>
+
+	<bean id="jdbcTemplate" class="com.hts.web.base.database.ZTJdbcTemplate">
+		<constructor-arg ref="slaveDataSource" />
+	</bean> -->
+
+<!-- 	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="${redis.maxActive}"/>
+        <property name="maxIdle" value="${redis.maxIdle}"/>
+        <property name="maxWaitMillis" value="${redis.maxWaitMillis}"/>
+        <property name="testOnBorrow" value="true"/>
+        <property name="testOnReturn" value="true"/>
+    </bean>
+	
+	<bean id="jedisConnFactory" 
+	    class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" 
+	    p:host-name="${redis.ip}" 
+	    p:port="${redis.port}"
+	    p:password="${redis.password}"
+	    p:use-pool="true"
+	    p:poolConfig-ref="jedisPoolConfig" />
+	    
+	<bean id="redisTemplate" 
+	    class="org.springframework.data.redis.core.RedisTemplate" 
+	    p:connection-factory-ref="jedisConnFactory">
+		<property name="keySerializer">  
+        	<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>  
+	    </property>  
+	</bean>
+	
+	<bean id="redisKeyTemplate"
+		class="org.springframework.data.redis.core.StringRedisTemplate" 
+	    p:connection-factory-ref="jedisConnFactory" >
+	</bean> -->
+	
+<!-- 	<import resource="spring-config-push.xml"/>
+	<import resource="spring-config-filter.xml"/> -->
+	
+</beans>
